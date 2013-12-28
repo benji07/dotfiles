@@ -1,0 +1,29 @@
+[user]
+    name = {{ name }}
+    email = {{ email }}
+
+[github]
+    user = {{ username }}
+
+[color]
+    ui = true
+
+[alias]
+    amend = commit --amend
+    st = status
+    who = shortlog -sne
+    undo = reset --soft HEAD^
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[mergetool]
+    keepBackup = true
+
+[push]
+    default = simple
+
+[credential]
+    helper = osxkeychain
