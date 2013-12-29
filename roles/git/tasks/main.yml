@@ -7,9 +7,9 @@
 - name: global .gitignore
   template: >
     src=gitignore.j2
-    dest=~/.gitignore_global
+    dest=/Users/{{ user }}/.gitignore_global
 
 - name: .gitconfig
   template: >
     src=gitconfig.j2
-    dest=~/.gitconfig
+    dest=/Users/{{ user }}/.gitconfig

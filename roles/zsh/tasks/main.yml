@@ -2,19 +2,19 @@
 - name: clone
   git: >
     repo=https://github.com/robbyrussell/oh-my-zsh.git
-    dest=~/.oh-my-zsh
+    dest=/Users/{{ user }}/.oh-my-zsh
     update=no
   sudo: no
 
 - name: template
   shell: >
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    creates=~/.zshrc
+    cp /Users/{{ user }}/.oh-my-zsh/templates/zshrc.zsh-template /Users/{{ user }}/.zshrc
+    creates=/Users/{{ user }}/.zshrc
   sudo: no
 
 - name: plugins
   lineinfile: >
-    dest=~/.zshrc
+    dest=/Users/{{ user }}/.zshrc
     line="plugins=({{ plugins }})"
     regexp="plugins=\(.*\)"
 

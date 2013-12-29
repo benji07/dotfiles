@@ -1,10 +1,12 @@
 ---
 - hosts: localhost
   vars:
+      user: benjamin
       username: benji07
       name: Benjamin Lévêque
       email: benjamin@leveque.me
   roles:
     - git
     - { role: zsh, plugins: "git sublime composer symfony2"}
+    - php
 

@@ -1,8 +1,10 @@
+** WIP : Ne pas utiliser **
+
 Mon dotfiles
 
 - configuration git -> ok
-- configuration zsh
-- configuration de php
+- configuration zsh -> ok
+- configuration de php -> wip
 - configuration de mysql
 - configuration de pow
 - configuration de phpcs
