@@ -6,4 +6,5 @@
       email: benjamin@leveque.me
   roles:
     - git
+    - { role: zsh, plugins: "git sublime composer symfony2"}
 
