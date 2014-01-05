@@ -9,4 +9,6 @@
     - git
     - { role: zsh, plugins: "git sublime composer symfony2"}
     - php
+    - mysql
+    - pow
 
