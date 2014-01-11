@@ -1,5 +1,11 @@
 ---
 
+- name: tap dupes
+  command: /usr/local/bin/brew tap homebrew/dupes creates=/usr/local/Library/Taps/homebrew-dupes
+
+- name: tap php
+  command: /usr/local/bin/brew tap josegonzalez/php creates=/usr/local/Library/Taps/josegonzalez-php
+
 - name: install
   homebrew: >
     name=php55
@@ -26,5 +32,10 @@
   notify:
    - restart apache
 
-
-#- name: configure
+- name: configure
+  template: >
+    src=zzz-config.ini.j2
+    dest=/usr/local/etc/php/5.5/conf.d/zzz-config.ini
+  sudo: yes
+  notify:
+   - restart apache

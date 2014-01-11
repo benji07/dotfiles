@@ -7,7 +7,7 @@
       email: benjamin@leveque.me
   roles:
     - git
-    - { role: zsh, plugins: "git sublime composer symfony2"}
+    - { role: zsh, plugins: "git sublime composer symfony2 history history-substring-search"}
     - php
     - mysql
     - pow
