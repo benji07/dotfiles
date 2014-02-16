@@ -2,7 +2,7 @@
 - name: configure
   template: >
     src=powconfig.j2
-    dest=/Users/{{ user }}/.powconfig
+    dest={{ ansible_env.HOME }}/.powconfig
 
 - name: install
   homebrew: >
@@ -11,13 +11,13 @@
 
 - name: Create the required host directories
   command: >
-    mkdir -p /Users/{{ user }}/Library/Application\ Support/Pow/Hosts
-    creates=/Users/{{ user }}/Library/Application\ Support/Pow/Hosts
+    mkdir -p {{ ansible_env.HOME }}/Library/Application\ Support/Pow/Hosts
+    creates={{ ansible_env.HOME }}/Library/Application\ Support/Pow/Hosts
 
 - name: Symlink to the host directories
   command: >
-    ln -s /Users/{{ user }}/Library/Application\ Support/Pow/Hosts/ /Users/{{ user }}/.pow
-    creates=/Users/{{ user }}/.pow
+    ln -s {{ ansible_env.HOME }}/Library/Application\ Support/Pow/Hosts/ {{ ansible_env.HOME }}/.pow
+    creates={{ ansible_env.HOME }}/.pow
 
 - name: Setup port 80 forwarding and launchd agents
   command: pow --install-system
@@ -31,7 +31,7 @@
   sudo: yes
 
 - name: Load launchd agents
-  command: 'su {{user }} -c "launchctl load -w /Users/{{ user }}/Library/LaunchAgents/cx.pow.powd.plist"'
+  command: 'su {{ ansible_env.USER }} -c "launchctl load -w {{ ansible_env.HOME }}/Library/LaunchAgents/cx.pow.powd.plist"'
   sudo: yes
 
 - name: enable in apache

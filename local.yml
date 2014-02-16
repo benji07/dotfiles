@@ -1,10 +1,5 @@
 ---
 - hosts: localhost
-  vars:
-      user: benjamin
-      username: benji07
-      name: Benjamin Lévêque
-      email: benjamin@leveque.me
   roles:
     - git
     - { role: zsh, plugins: "git sublime composer symfony2 history history-substring-search"}
@@ -12,3 +7,15 @@
     - mysql
     - pow
 
+  tasks:
+
+    # configuration of git
+    - name: global .gitignore
+      template: >
+        src=templates/git/gitignore.j2
+        dest={{ ansible_env.HOME }}/.gitignore_global
+
+    - name: .gitconfig
+      template: >
+        src=templates/git/gitconfig.j2
+        dest={{ ansible_env.HOME }}/.gitconfig

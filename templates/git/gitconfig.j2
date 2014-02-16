@@ -1,9 +1,9 @@
 [user]
-    name = {{ name }}
-    email = {{ email }}
+    name = Benjamin Lévêque
+    email = benjamin@leveque.me
 
 [github]
-    user = {{ username }}
+    user = benji07
 
 [color]
     ui = true
@@ -17,7 +17,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [core]
-    excludesfile = /Users/{{ user }}/.gitignore_global
+    excludesfile = {{ ansible_env.HOME }}/.gitignore_global
 
 [mergetool]
     keepBackup = true

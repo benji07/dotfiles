@@ -2,19 +2,19 @@
 - name: clone
   git: >
     repo=https://github.com/robbyrussell/oh-my-zsh.git
-    dest=/Users/{{ user }}/.oh-my-zsh
+    dest={{ ansible_env.HOME }}/.oh-my-zsh
     update=no
   sudo: no
 
 - name: template
   shell: >
-    cp /Users/{{ user }}/.oh-my-zsh/templates/zshrc.zsh-template /Users/{{ user }}/.zshrc
-    creates=/Users/{{ user }}/.zshrc
+    cp {{ ansible_env.HOME }}/.oh-my-zsh/templates/zshrc.zsh-template {{ ansible_env.HOME }}/.zshrc
+    creates={{ ansible_env.HOME }}/.zshrc
   sudo: no
 
 - name: plugins
   lineinfile: >
-    dest=/Users/{{ user }}/.zshrc
+    dest={{ ansible_env.HOME }}/.zshrc
     line="plugins=({{ plugins }})"
     regexp="plugins=\(.*\)"
 
