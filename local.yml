@@ -6,6 +6,12 @@
     - php
     - mysql
     - pow
+    - homebrew-cask
+    - { role: vagrant, plugins: ["vagrant-hostmanager"]}
+  vars:
+    applications:
+      - mou # markdown editor
+      - subler # video subtitle manager
 
   tasks:
 
@@ -19,3 +25,8 @@
       template: >
         src=templates/git/gitconfig.j2
         dest={{ ansible_env.HOME }}/.gitconfig
+
+    # Install application with brew cask
+    - name: Install applications with cask
+      command: /usr/local/bin/brew cask install {{ item }} creates=/opt/homebrew-cask/Caskroom/{{ item }}
+      with_items: applications

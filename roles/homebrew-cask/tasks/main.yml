@@ -1,0 +1,11 @@
+---
+- name: tap
+  command: /usr/local/bin/brew tap phinze/cask creates=/usr/local/Library/Taps/phinze-cask
+
+- name: tap beta
+  command: /usr/local/bin/brew tap caskroom/versions creates=/usr/local/Library/Taps/caskroom-versions
+
+- name: install
+  homebrew: >
+    name=brew-cask
+    state=present
