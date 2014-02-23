@@ -10,11 +10,17 @@
     - { role: vagrant, plugins: ["vagrant-hostmanager"]}
   vars:
     applications:
+      - adium
+      - airfoil # send music from spotify to my Apple TV
+      - alfred
+      - dropbox
+      - google-chrome
       - mou # markdown editor
+      - spotify
       - subler # video subtitle manager
+      - vlc
 
   tasks:
-
     # configuration of git
     - name: global .gitignore
       template: >
