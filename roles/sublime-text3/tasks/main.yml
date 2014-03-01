@@ -1,0 +1,10 @@
+---
+- name: install
+  command:
+    /usr/local/bin/brew cask install sublime-text3
+    creates=/opt/homebrew-cask/Caskroom/sublime-text3
+
+- name: install package control
+  get_url:
+    "url=https://sublime.wbond.net/Package%20Control.sublime-package
+    dest='{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package'"

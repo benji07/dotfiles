@@ -8,6 +8,7 @@
     - pow
     - homebrew-cask
     - { role: vagrant, plugins: ["vagrant-hostmanager"]}
+    - sublime-text3
   vars:
     applications:
       - adium
