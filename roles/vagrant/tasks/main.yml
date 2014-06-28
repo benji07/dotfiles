@@ -1,9 +1,9 @@
 ---
 - name: Install virtualbox
-  command: /usr/local/bin/brew cask install virtualbox creates=/opt/homebrew-cask/Caskroom/mou
+  homebrew_cask: name=virtualbox state=present
 
 - name: Install vagrant
-  command: /usr/local/bin/brew cask install vagrant creates=/opt/homebrew-cask/Caskroom/vagrant
+  homebrew_cask: name=vagrant state=present
 
 # install plugins
 - name: Install vagrant plugins

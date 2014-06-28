@@ -12,12 +12,11 @@
   vars:
     applications:
       - adium
-      - airfoil # send music from spotify to my Apple TV
       - alfred
       - dropbox
-      - google-chrome
-      - mou # markdown editor
       - spotify
+      - airfoil # send music from spotify to my Apple TV
+      - mou # markdown editor
       - subler # video subtitle manager
       - vlc
 
@@ -35,5 +34,5 @@
 
     # Install application with brew cask
     - name: Install applications with cask
-      command: /usr/local/bin/brew cask install {{ item }} creates=/opt/homebrew-cask/Caskroom/{{ item }}
+      homebrew_cask: name={{ item }} state=present
       with_items: applications

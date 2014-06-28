@@ -1,8 +1,6 @@
 ---
 - name: install
-  command:
-    /usr/local/bin/brew cask install sublime-text3
-    creates=/opt/homebrew-cask/Caskroom/sublime-text3
+  homebrew_cask: name=sublime-text3 state=present
 
 - name: install package control
   get_url:

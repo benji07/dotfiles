@@ -1,10 +1,10 @@
 ---
 
-- name: tap dupes
-  command: /usr/local/bin/brew tap homebrew/dupes creates=/usr/local/Library/Taps/homebrew-dupes
+- name: tap homebrew/dupes
+  homebrew_tap: tap=homebrew/dupes state=present
 
-- name: tap php
-  command: /usr/local/bin/brew tap josegonzalez/php creates=/usr/local/Library/Taps/josegonzalez-php
+- name: tap josegonzalez/php
+  homebrew_tap: tap=josegonzalez/php state=present
 
 - name: install
   homebrew: >
