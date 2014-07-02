@@ -1,9 +1,0 @@
-<VirtualHost *:80>
-  ServerName pow
-  ServerAlias *.dev
-  ServerAlias *.xip.io
-
-  ProxyPass / http://localhost:20559/
-  ProxyPassReverse / http://localhost:20559/
-  ProxyPreserveHost On
-</VirtualHost>

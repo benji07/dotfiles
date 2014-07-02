@@ -5,7 +5,7 @@
     - { role: zsh, plugins: "git sublime composer symfony2 history history-substring-search"}
     - php
     - mysql
-    - pow
+    - dnsmasq
     - homebrew-cask
     - { role: vagrant, plugins: ["vagrant-hostmanager"]}
     - sublime-text3
