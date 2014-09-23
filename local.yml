@@ -7,7 +7,7 @@
     - mysql
     - dnsmasq
     - homebrew-cask
-    - { role: vagrant, plugins: ["vagrant-hostmanager"]}
+    - { role: vagrant, plugins: ["vagrant-hostmanager", "landrush"]}
     - sublime-text3
   vars:
     applications:
