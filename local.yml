@@ -5,20 +5,11 @@
     - { role: zsh, plugins: "git sublime composer symfony2 history history-substring-search"}
     - php
     - mysql
-    - dnsmasq
     - homebrew-cask
     - { role: vagrant, plugins: ["vagrant-hostmanager", "landrush"]}
-    - sublime-text3
   vars:
     applications:
-      - adium
       - alfred
-      - dropbox
-      - spotify
-      - airfoil # send music from spotify to my Apple TV
-      - mou # markdown editor
-      - subler # video subtitle manager
-      - vlc
 
   tasks:
     # configuration of git

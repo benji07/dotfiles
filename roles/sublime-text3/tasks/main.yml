@@ -1,8 +1,0 @@
----
-- name: install
-  homebrew_cask: name=sublime-text3 state=present
-
-- name: install package control
-  get_url:
-    "url=https://sublime.wbond.net/Package%20Control.sublime-package
-    dest='{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package'"

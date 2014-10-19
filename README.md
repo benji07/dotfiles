@@ -2,7 +2,7 @@
 
 # Pré-requis
 
-Installation de XCode, Homebrew et ansible
+Installation des command line tools, Homebrew et ansible
 
 # Installation
 
